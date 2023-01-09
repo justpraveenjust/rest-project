@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flights Dashboard</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href=    "/css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body style="padding:50px;" class="text-capitalize">
+
+<div class="table-responsive-sm">
+<table class="table table-hover">
+    <tr>
+        <th scope="row">flight number</th>
+        <th scope="row">departure</th>
+        <th scope="row">arrival</th>
+        <th scope="row">from</th>
+        <th scope="row">to</th>
+    </tr>
+    <tr th:each="das : ${dash}">
+        <td class="col-12 col-md-2" th:text="${das.flightNo}"></td>
+        <td class="col-12 col-md-2" th:text="${das.departure}"></td>
+        <td class="col-12 col-md-2" th:text="${das.arrival}"></td>
+        <td class="text-uppercase" th:text="${das.fromLocation}"></td>
+        <td class="text-uppercase" th:text="${das.toLocation}"></td>
+        <td><input class="btn btn-warning btn-xs" type="button" value="update" /><input class="btn btn-danger btn-xs" type="button" value="delete" /></td>
+    </tr>
+    <tr>
+        <form method="post" action="home.html" th:attr="action=@{/dashboard}" th:object="${dashinsert}">
+            <fieldset>
+                <td><input type="text" name="flightNo" /></td>
+                <td><input type="text" name="departure" /></td>
+                <td><input type="text" name="arrival" /></td>
+                <td><input type="text" name="fromLocation" /></td>
+                <td><input type="text" name="toLocation" /></td>
+                <td><input class="btn btn-success btn-xs" type="submit" value="add" /></td>
+            </fieldset>
+        </form>
+    </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+package net.pra.restproject.entity;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "flight_detail")
+public class FlightDetail {
+
+    @Id
+    @GeneratedValue()
+    private long id;
+    private String flightNo;
+    private LocalDate departure;
+    private LocalDate arrival;
+    private String fromLocation;
+    private String toLocation;
+
+    public FlightDetail() {
+    }
+
+    public FlightDetail(long id, String flightNo, LocalDate departure, LocalDate arrival, String fromLocation, String toLocation, double cost) {
+        this.id = id;
+        this.flightNo = flightNo;
+        this.departure = departure;
+        this.arrival = arrival;
+        this.fromLocation = fromLocation;
+        this.toLocation = toLocation;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getFlightNo() {
+        return flightNo;
+    }
+
+    public void setFlightNo(String flightNo) {
+        this.flightNo = flightNo;
+    }
+
+    public LocalDate getDeparture() {
+        return departure;
+    }
+
+    public void setDeparture(LocalDate departure) {
+        this.departure = departure;
+    }
+
+    public LocalDate getArrival() {
+        return arrival;
+    }
+
+    public void setArrival(LocalDate arrival) {
+        this.arrival = arrival;
+    }
+
+    public String getFromLocation() {
+        return fromLocation;
+    }
+
+    public void setFromLocation(String fromLocation) {
+        this.fromLocation = fromLocation;
+    }
+
+    public String getToLocation() {
+        return toLocation;
+    }
+
+    public void setToLocation(String toLocation) {
+        this.toLocation = toLocation;
+    }
+
+    @Override
+    public String toString() {
+        return "FightDetail{" +
+                "id=" + id +
+                ", flightNo='" + flightNo + '\'' +
+                ", departure=" + departure +
+                ", arrival=" + arrival +
+                ", fromLocation='" + fromLocation + '\'' +
+                ", toLocation='" + toLocation + '\'' +
+                '}';
+    }
+}

@@ -1,0 +1,1 @@
+insert into flight_detail (id, flight_no, departure, arrival, from_location, to_location) values ('1211','mum121','2022-02-17','2022-02-16','mum','blr'), ('2121','del121','2022-02-17','2022-02-16','del','blr'), ('1111','kol111','2012-02-17','2012-02-16','kol','blr');
